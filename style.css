@@ -57,6 +57,7 @@ body{
     text-shadow: 0 0 25px var(--main-color);
 }
 
+
 .navbar a{
     font-size: 1.8rem;
     color: var(--text-color);
@@ -479,6 +480,11 @@ span{
     margin: auto ;
 }
 
+.Projects{
+    background: var(--second-bg-color);
+
+}
+
 .contact{
     background-color: var(--bg-color);
 }
@@ -697,19 +703,34 @@ span{
 
     .services-container{
         grid-template-columns: repeat(1,1fr);
+        margin: 0rem;
+
     }
 
    
     
 }
+
+@media (max-width: 600px) {
+    .navbar{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+    }    
+    
+}
+
 @media (max-width: 435px) {
    
     .home-cont h3 {
-        font-size: 2.2rem; /* Adjusted for smaller screens */
+        font-size: 1.9rem; /* Adjusted for smaller screens */
     }
 
     .home-cont h1 {
-        font-size: 4.2rem; /* Adjusted size for better fit */
+        font-size: 3.7rem; /* Adjusted size for better fit */
         margin-top: 0.3rem; /* Slight margin adjustment */
         text-align: left;
     }
@@ -719,8 +740,28 @@ span{
         text-align: left;
     }
 
-    .services-container {
-        grid-template-columns: repeat(1, 1fr); /* Fix: Set to 1 column for narrow screens */
-        gap: 1rem; /* Add spacing between items if needed */
+    .heading{
+        font-size: 5rem
+
+    }
+    .service-info h4{
+        font-size: 2.2rem;
+        font-weight: 800;
+    }
+    .footer .social a{
+        font-size: 19px;
+        width: 32px;
+        height: 32px;
+        line-height: 32px;
+    }
+
+    .footer ul{
+        font-size: 12px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .footer{
+        padding: 3rem 0.6%;
     }
 }

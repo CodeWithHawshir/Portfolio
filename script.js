@@ -1,39 +1,30 @@
-let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navbar');
-let sections = document.querySelectorAll('section');
-let navLinks = document.querySelectorAll('header nav a');
+// Toggle the menu visibility
+let menuList = document.getElementById("menuList");
+let menuIcon = document.getElementById("menu-icon");
 
-window.onscroll = () => {
-    let top = window.scrollY;
-    sections.forEach(sec => {
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+menuList.style.maxHeight = "0px";
 
-        if (top >= offset && top < offset + height) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                let targetLink = document.querySelector(`header nav a[href="#${id}"]`);
-                if (targetLink) {
-                    targetLink.classList.add('active');
-                }
-            });
-        }
-    });
-};
+function toggleMenu() {
+  if (menuList.style.maxHeight === "0px") {
+    menuList.style.maxHeight = "300px"; // Adjust as needed
+  } else {
+    menuList.style.maxHeight = "0px";
+  }
+}
 
+// Attach the toggleMenu function to the menu icon
+menuIcon.addEventListener("click", () => {
+  menuIcon.classList.toggle("bx-x"); // Change the icon to indicate toggle state
+  toggleMenu();
+});
+
+// Initialize Typed.js when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", () => {
-    let typed = new Typed(".auto-type",{
-    strings: ["Web Developer ","UI / UX Designer","Frontend Designer"], 
+  let typed = new Typed(".auto-type", {
+    strings: ["Web Developer", "UI / UX Designer", "Frontend Designer"],
     typeSpeed: 70,
     backSpeed: 50,
     loop: true,
-    showCursor: false
-
-})
-})
-
-menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-};
+    showCursor: false,
+  });
+});
